@@ -8,7 +8,7 @@
 
 // 2. Vendors
 @import
-  'vendor/normalize';
+  'vendor/vendor';
 
 // 3. Base stuff
 @import
@@ -19,17 +19,13 @@
 
 // 4. Layout-related sections
 @import
-  'layout/header',
-  'layout/footer';
+  'partials/header',
+  'partials/footer';
 
 // 5. Components
 @import
-  'components/button';
+  'options/button';
 
 // 6. Page-specific styles
 @import
-  'pages/home';
-
-// 7. Themes
-@import
-  'themes/default';
+  'layouts/home';
