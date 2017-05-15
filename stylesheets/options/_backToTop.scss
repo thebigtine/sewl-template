@@ -1,0 +1,9 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the back to top option.
+// -----------------------------------------------------------------------------
+
+#backToTop{
+  background: $main url('backToTopArrow.png') center no-repeat;
+  background-size: contain;
+  height: 28px;
+}

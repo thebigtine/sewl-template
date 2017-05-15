@@ -2,22 +2,56 @@
 // This file contains very basic styles.
 // -----------------------------------------------------------------------------
 
-/**
- * Set up a decent box model on the root element
- */
-html {
-  box-sizing: border-box;
+/* pad the top of the page in edit mode in order to avoid the toolbar */
+#webeditCoreEditModePage,
+.wEdit {
+  padding-top : 100px;
 }
 
-/**
- * Make all elements from the DOM inherit from the parent box-sizing
- * Since `*` has a specificity of 0, it does not override the `html` value
- * making all elements inheriting from the root box-sizing value
- * See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
- */
-*, *::before, *::after {
-  box-sizing: inherit;
-} 
+/* Remove default underline on links */
+a {
+  text-decoration: none;
+}
+
+/* Colour the it'seeze link */
+.webeditCopyrightComponent a{
+  color : #f37422 !important;
+}
+
+/* Make the dropdown a cross */
+#wMenuToggle:checked ~ * #wMenuIcon > span::before {
+  width: 0.98em;
+  -webkit-transform: translate(-0.025em,-0.006em) rotate(-90deg);
+  transform: translate(-0.025em,-0.006em) rotate(-90deg);
+}
+
+#wMenuToggle:checked ~ * #wMenuIcon > span::after {
+  opacity: 0;
+}
+
+#wMenuToggle:checked ~ * #wMenuIcon > span {
+  -webkit-transform: translate(0,0.4375em) rotate(-180deg);
+  transform: translate(0,0.4375em) rotate(-134deg);
+}
+
+/* Make textonimage text larger for full width rows */
+.wWidth1920 .wTextonimageText,
+.wWidth1920Xl .wTextonimageText,
+#banner .wTextonimageText {
+  font-size: 2em;
+}
+
+@media screen and (width:1920px) {
+  .wEdit .wTextonimage {
+    font-size: inherit !important;
+  }
+}
+
+.wWidth1920,
+.wWidth1920Xl {
+  width: 100% !important;
+}
+
 
 /**
  * Basic styles for links

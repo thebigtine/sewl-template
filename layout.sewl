@@ -1,0 +1,251 @@
+breakpoints xs < 320 <= s < 480 <= m < 640 <= l < 800 <= (xl) <= 960
+
+breakpoints xs < 384 <= s < 576 <= m < 768 <= l < 960 <= (xl) <= 1152
+
+breakpoints xs < 448 <= s < 672 <= m < 896 <= (l) < 1120 <= xl <= 1344
+
+breakpoints xs < 512 <= s < 768 <= m < 1024 <= (l) < 1280 <= xl <= 1536
+
+breakpoints xs < 640 <= s < 960 <= (m) < 1280 <= l < 1600 <= xl <= 1920
+
+
+
+
+//LAYOUTS FOR LITE SITES
+
+layout name home sublayouts "search shop content"
+  +layout content content
+
+layout name content sublayouts "content" description "Standard page"
+  +layout content content
+
+layout name search sublayouts ""
+  +layout content searchContent
+
+layout name shop sublayouts ""
+  +layout content shopContent
+
+layout name privacyPolicy description "Privacy policy page" sublayouts ""
+  +layout content privacyPolicy
+
+
+// LAYOUT TEMPLATE
+
+layout(content):
+  section role header
+    +header
+  section role nav
+    +navigation
+  optional name bannerOptional description "banner" shown yes
+    section id banner
+      +banner
+  row id content
+    +$content
+  //+backToTop
+  section role footer
+    +footer
+    +itseezeFooter
+
+
+// CERI'S BASIC TEMPLATE
+
+header:
+  row id headerRow
+
+navigation:
+  row id navRow width 170 breakpoint <=m
+    split splits "1,1,1 >=l:1/1/1" gutter 10
+      for index 1 1
+        column
+          <=m
+            row padding 7
+              image name {"mobileButtonLeft" . $index} shared yes aspectratio 1:1
+      column role nav
+        dropdown name contentDropdown breakpoint <=m layouts "content blog" ancestor yes width 50 height 50 side trailing
+      for index 1 1
+        column
+          <=m
+            row padding 7
+              image name {"mobileButtonRight" . $index} shared yes aspectratio 1:1
+
+banner:
+  row id bannerRow
+    splitoptions name bannerOptions space 20 gutter 20 padding 15 label "Banner options"
+      +allOptions
+
+content:
+  row id contentRow
+    sectionoptions name contentSectionOptions gutter 20 space 20 padding 15 default "WhiteContent"
+      foreach colour "[ [name:White, description:'White'] ]"
+        option name {$colour["name"]. "Content"} description {$colour["description"] . " content section"} section yes class {$colour["name"] . "Content contentSection"} icon 1
+
+      //for number 1 1
+        //option name {"Content" . $number} description {"Content section with image background (" . $number . ")"} section yes class {"Image" . $number . "Content contentSection imageContent"} icon image
+
+      //option name magicArrowOption description "Magic arrow" help "Use over banner images. Will move upwards outside of edit mode." class magicArrow icon widget section yes
+        //breakpoint name magicBreakpoint breakpoint >=l
+          //row width 70 class wCentred
+            //image aspectratio 1:1
+
+      option name fullWidthRowOption description "Full width content area" help "Useful for images and maps" icon widget section yes class fullWidthRow
+        row width 1920
+          splitoptions name fullWidthRowSplitoptions space 0 gutter 20 padding 14 label "Full width content"
+            +allOptions
+
+      +allOptions
+      +sticky
+
+backToTop:
+  row id backToTop padding 5
+    //text name backToTopText default "Back to top" alignment centre editable no
+
+footer:
+  row id footerRow
+    splitoptions name footerOptions gutter 20 space 20 shared yes label "Shared footer options"
+      +allOptions
+
+itseezeFooter:
+  row class itseezeFooter padding "10 0 20"
+    copyright
+    row id editButton
+      edit background light
+
+
+//Options
+
+allOptions:
+  +iconRows
+  +contentIcons
+  +socialIcons
+  +extraSpace
+  +growRollover
+
+growRollover:
+  option name growRolloverOption description "Grow rollover (no overflow)" help "Image that grows on rollover" group Extras icon image class growRollover
+    textonimage name growRollover
+
+iconRows:
+  foreach size "[15, 32]"
+    option name {"iconRowOption" . $size} description {"Contact detail row with " . $size . "px fixed width icon"} group Extras icon 12
+      row class iconRow
+        columns leading $size gutter 10
+          column
+            image name {"iconRowImage" . $size}
+          column
+            splitoptions name iconRowOptions space 20 gutter 20
+
+contentIcons:
+  foreach size "[100]"
+    option name {"contentIconOption" . $size} description {$size . "px fixed width central icon"} group Extras icon image
+      row class {"contentIcon" . $size}
+        row class wCentred
+          image name {"contentIconImage" . $size}
+
+sticky:
+  option name stickyOption description "Zero space options" help "Options with no vertical space between options" icon widget group Extras
+    splitoptions name stickyOptions space 0 gutter 20 padding 10 label "Zero space options"
+      +allOptions
+
+extraSpace:
+  foreach size "[10,20]"
+    option name {"spacer" . $size} description {$size . "px extra space"} icon widget group Structure class extraSpace
+      row padding {$size / 2}
+
+//Social icon rows
+
+socialIcons:
+  +social2
+  +social3
+  +social4
+  +social5
+  +social6
+
+social2:
+  option name social2Option description "Social media image links x 2" group Social icon 11
+    // -------- Row width is ((No. of icons * 40) - gutter) to give an icon width of 32
+    row class "socialRow socialRow2 wCentred" width 72
+      split splits 1,1 gutter 8
+        for index 1 2
+          column
+            image name {"socialIcon" . $index}
+
+social3:
+  option name social3Option description "Social media image links x 3" group Social icon 111
+    // -------- Row width is ((No. of icons * 40) - gutter) to give an icon width of 32
+    row class "socialRow socialRow3 wCentred" width 112
+      split splits 1,1,1 gutter 8
+        for index 1 3
+          column
+            image name {"socialIcon" . $index}
+
+social4:
+  option name social4Option description "Social media image links x 4" group Social icon 1111
+    // -------- Row width is ((No. of icons * 40) - gutter) to give an icon width of 32
+    row class "socialRow socialRow4 wCentred" width 160
+      split splits 1,1,1,1 gutter 8
+        for index 1 4
+          column
+            image name {"socialIcon" . $index}
+
+social5:
+  option name social5Option description "Social media image links x 5" group Social icon 11111
+    // -------- Row width is ((No. of icons * 40) - gutter) to give an icon width of 32
+    row class "socialRow socialRow5 wCentred" width 192
+      split splits 1,1,1,1,1 gutter 8
+        for index 1 5
+          column
+            image name {"socialIcon" . $index}
+
+social6:
+  option name social6Option description "Social media image links x 6" group Social icon 111111
+    // -------- Row width is ((No. of icons * 40) - gutter) to give an icon width of 32
+    row class "socialRow socialRow6 wCentred" width 232
+      split splits 1,1,1,1,1,1 gutter 8
+        for index 1 6
+          column
+            image name {"socialIcon" . $index}
+
+
+
+//Miscellaneous bits
+
+search:
+  row id search padding "10 0"
+    search
+
+searchContent:
+  row class "wCentred contentSection"
+    searchresults
+
+shopContent:
+  row class "wCentred contentSection"
+    shop
+
+privacyPolicy:
+  row class "WhiteContent contentSection"
+    row class wCentred
+      privacypolicy name privacyPolicy
+
+blog:
+  +blogOrPost post no
+
+blogpost:
+  +blogOrPost post yes
+
+blogOrPost(post):
+  splitoptions name blogTopOptions space 20 gutter 20 padding 15
+    +allOptions
+  row class "contentSection WhiteContent"
+    row class wCentred
+      columns order 21 leading 180 breakpoint <l gutter 20 space 20
+        column
+          if {$post == "yes"}
+            blogpost
+          else
+            blog padding 10
+        column
+          split splits "1/1 <l:1,1" gutter 20 space 20
+            column
+              blogmenu type months
+            column
+              blogmenu type tags

@@ -1,0 +1,80 @@
+// -----------------------------------------------------------------------------
+// This file contains styles relating to the nav and dropdown menu.
+// -----------------------------------------------------------------------------
+
+// General styling for the whole bar -------------------------------------------
+nav {
+  .wDropdown {
+
+    // Basic styling
+    li a,
+    li span {
+        transition: 0.2s;
+        line-height: 30px !important;
+        color: ;
+      }
+    }
+
+    // Basic styling for TOP LEVEL
+    > li > a,
+    > li > span {
+      line-height: 40px !important;
+    }
+
+    // Basic styling CHILDREN (all levels below TOP)
+    ul li > a,
+    ul li > span {
+      line-height: 35px !important;
+    }
+  }
+}
+
+
+// Hover states ----------------------------------------------------------------
+
+// Top level hover state
+//   The item is hovered over or in the opened state
+//   Can also include hover states of selected and ancestor states
+.wDropdown > li:hover > a,
+.wDropdown > li:hover > span,
+.wDropdown > li.wMenuOpen > a,
+.wDropdown > li.wMenuOpen > span,
+.wDropdown > li.wMenuSelected:hover > span,
+.wDropdown > li.wMenuAncestor:hover > a {
+
+}
+
+// Child level hover state
+// The item is hovered over or in the opened state
+.wDropdown ul li:hover > a,
+.wDropdown ul li:hover > span,
+.wDropdown ul li.wMenuOpen > a,
+.wDropdown ul li.wMenuOpen > span{
+
+}
+
+// Selected states -------------------------------------------------------------
+
+// Top level selected state
+.wDropdown > li.wMenuSelected > span {
+
+}
+
+// Child selected state
+.wDropdown ul li.wMenuSelected > span,
+.wDropdown ul li.wMenuSelected:hover > span {
+
+}
+
+// Misc extra menu styling bits ------------------------------------------------
+.wDropdown ul {
+  min-width: 100%;
+  text-align: left;
+}
+
+// pad drop-down items
+.wDropdown a, span {
+    padding: 0 1em;
+    line-height : 3em;
+  }
+}

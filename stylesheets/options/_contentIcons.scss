@@ -1,0 +1,15 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the centred icons option.
+// -----------------------------------------------------------------------------
+
+// Sizes
+$contentIcons: 100,220;
+
+@each $size in $contentIcons{
+
+  .contentIcon#{$size}{
+    max-width: #{$size}px;
+    float: none;
+    margin: 0 auto;
+  }
+}

@@ -1,0 +1,18 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the color block component.
+// http://sewl.spoton.net/?component=colourblock
+// -----------------------------------------------------------------------------
+
+.wColourblockLightText .wFormRequired label:after,
+.wColourblockLightText a,
+.wColourblockLightText .wFormError,
+.wColourblockLightText div.dl {
+  color: white !important;
+}
+
+.wColourblockDarkText .wFormRequired label:after,
+.wColourblockDarkText a,
+.wColourblockLightText .wFormError,
+.wColourblockDarkText div.dl {
+  color: black !important;
+}

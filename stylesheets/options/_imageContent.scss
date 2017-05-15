@@ -1,0 +1,55 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the full width image option.
+// -----------------------------------------------------------------------------
+
+.Image1Content{background-image: url('imgbg1.jpg');}
+//.Image2Content{background-image: url('imgbg2.jpg');}
+//.Image3Content{background-image: url('imgbg3.jpg');}
+//.Image4Content{background-image: url('imgbg4.jpg');}
+//.Image5Content{background-image: url('imgbg5.jpg');}
+//.Image6Content{background-image: url('imgbg6.jpg');}
+//.Image7Content{background-image: url('imgbg7.jpg');}
+//.Image8Content{background-image: url('imgbg8.jpg');}
+//.Image9Content{background-image: url('imgbg9.jpg');}
+//.Image10Content{background-image: url('imgbg10.jpg');}
+//.Image11Content{background-image: url('imgbg11.jpg');}
+//.Image12Content{background-image: url('imgbg12.jpg');}
+//.Image13Content{background-image: url('imgbg13.jpg');}
+//.Image14Content{background-image: url('imgbg13.jpg');}
+//.Image15Content{background-image: url('imgbg14.jpg');}
+//.Image16Content{background-image: url('imgbg15.jpg');}
+//.Image17Content{background-image: url('imgbg16.jpg');}
+//.Image17Content{background-image: url('imgbg17.jpg');}
+//.Image18Content{background-image: url('imgbg18.jpg');}
+//.Image19Content{background-image: url('imgbg19.jpg');}
+//.Image20Content{background-image: url('imgbg20.jpg');}
+
+@breakpoint #{">=l"}{
+	.imageContent{
+    background-attachment: fixed;
+    background-size: cover;
+  }
+}
+
+@breakpoint #{"<=m"}{
+	.imageContent{
+    background-attachment: scroll;
+  }
+}
+
+/* This section *should* target landscape iPads and similar tablet devices */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : landscape) {
+  .imageContent{
+    background-attachment: scroll;
+    background-size: 1024px !important;}}
+
+// You only need the below section if image sections are used.
+//SCSS will automatically ignore this if left commented.
+//@media all and (max-width: 1400px) and (min-resolution: 230dpi) {
+  //.ImageContent {
+    //background-attachment: local;
+  //}
+//}

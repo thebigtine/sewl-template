@@ -29,3 +29,155 @@
 // 6. Page-specific styles
 @import
   'layouts/home';
+
+  //  SCSS Variables  ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+//colors
+
+$main: #fff;
+$accent: darken($main, 10%);
+
+//nav
+
+
+
+
+/* Body   ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+body{
+
+}
+
+
+
+/* Header   ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+header{
+
+}
+
+/* Navigation   ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+
+
+/* Dropdown   ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+
+
+/* Content   ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+.contentSection{
+  padding: 40px 30px;
+}
+
+//Don't forget to style buttons and links separately for any sections that won't work with the default styling
+
+.WhiteContent{
+  background: #fff;
+}
+
+
+
+//@import '_imageContent.scss';
+//@import '../../0 PARTIALS/_magicArrow.scss';
+
+/* Full width maps and images code */
+.fullWidthRow .wCentred,
+.fullWidthRow .wWidth1920{
+  max-width: 100% !important;
+  min-width: 100% !important;
+  float: none;
+  margin: 0 auto;
+}
+
+/* Content link and button styling   ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+/* Default content styling */
+
+/* Make the elements match the page colours */
+#content a:link,
+#content a:visited,
+#content .wFormRequired label:after,
+#content .wFormError,
+#content div.dl
+{ color: $main;} // Pick a colour that will show against most backgrounds
+
+#content a:hover,
+#content a:active
+{ color: $accent;}
+
+/*Button styling */
+// Button standard
+#content .wButton:not(.sButton) span,
+#content .webeditShareComponent button > span{
+  background: $main;
+  color: white;
+}
+
+// Button hover
+#content .wButton:not(.sButton):hover span,
+#content .webeditShareComponent:hover button > span{
+  background: $accent;
+  color: white;
+}
+
+/* ---------------------- */
+
+/*Form styling*/
+
+.wFormField input,
+.wFormField textarea{
+    border: 1px solid #ccc;
+    border-radius: 0px;
+    background: #fff;
+    box-shadow: none;
+}
+
+.wFormField input:focus,
+.wFormField textarea:focus{
+  background: #eee;
+}
+
+/* Footer   ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+footer{
+  padding: 20px 30px;
+}
+
+/* Make the elements match the page colours */
+footer a:link,
+footer a:visited,
+footer .wFormRequired label:after,
+footer .wFormError,
+footer div.dl
+{ color: #fff;} // Pick a colour that will show against the background
+
+footer a:hover,
+footer a:active
+{ color: #ccc;}
+
+/*Button styling */
+// Button standard
+footer .wButton:not(.sButton) span,
+footer .webeditShareComponent button > span{
+  background: #fff;
+  color: $main;
+}
+
+// Button hover
+footer .wButton:not(.sButton):hover span,
+footer .webeditShareComponent:hover button > span{
+  background: white;
+  color: $accent;
+}
+
+
+// IMPORTS FOR PARTIAL FILES --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+@import '_5options.scss';
+@import '_6misc.scss';
+@import '_template.scss';
+@import '_liteSiteDropdown.scss';
+//@import '_7backToTop.scss';
+//@import '../../0 PARTIALS/_animator.scss';
+

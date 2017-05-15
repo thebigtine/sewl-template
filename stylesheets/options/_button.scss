@@ -1,3 +1,14 @@
 // -----------------------------------------------------------------------------
-// This file contains all styles related to the button component.
+// This file contains all styles related to the button option.
 // -----------------------------------------------------------------------------
+
+/*Button styling */
+.wButton:not(.sButton) span,
+.webeditShareComponent button > span{
+  text-shadow: none;
+  transition: 0.5s;
+  padding: 5px 10px;
+  text-transform: uppercase;
+  border-radius: 0;
+  border: none;
+}
