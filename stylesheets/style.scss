@@ -20,13 +20,21 @@
 // 4. Layout-related sections
 @import
   'partials/header',
+  'partials/navDropdown',
   'partials/footer';
 
-// 5. Components
+// 5. Options
 @import
-  'options/button';
+  'options/animator',
+  'options/backToTop',
+  'options/button',
+  'options/colorBlocks',
+  'options/contentIcons',
+  'options/extraSpace',
+  'options/imageContent',
+  'options/magicArrow';
 
-// 6. Page-specific styles
+// 6. Layout-specific styles
 @import
   'layouts/home';
 
