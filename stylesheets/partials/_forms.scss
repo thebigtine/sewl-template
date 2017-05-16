@@ -1,0 +1,16 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to forms.
+// -----------------------------------------------------------------------------
+
+.wFormField input,
+.wFormField textarea{
+    border: 1px solid #ccc;
+    border-radius: 0px;
+    background: #fff;
+    box-shadow: none;
+}
+
+.wFormField input:focus,
+.wFormField textarea:focus{
+  background: #eee;
+}

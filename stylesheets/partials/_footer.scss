@@ -1,3 +1,34 @@
 // -----------------------------------------------------------------------------
-// This file contains all styles related to the footer of the site/application.
+// This file contains all styles related to the footer.
 // -----------------------------------------------------------------------------
+
+footer{
+  padding: 20px 30px;
+}
+
+/* Make the elements match the page colours */
+footer a:link,
+footer a:visited,
+footer .wFormRequired label:after,
+footer .wFormError,
+footer div.dl
+{ color: #fff;} // Pick a colour that will show against the background
+
+footer a:hover,
+footer a:active
+{ color: #ccc;}
+
+/*Button styling */
+// Button standard
+footer .wButton:not(.sButton) span,
+footer .webeditShareComponent button > span{
+  background: #fff;
+  color: $main;
+}
+
+// Button hover
+footer .wButton:not(.sButton):hover span,
+footer .webeditShareComponent:hover button > span{
+  background: white;
+  color: $accent;
+}

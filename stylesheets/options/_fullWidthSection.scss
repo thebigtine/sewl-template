@@ -1,0 +1,11 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the full width sections.
+// -----------------------------------------------------------------------------
+
+.fullWidthRow .wCentred,
+.fullWidthRow .wWidth1920{
+  max-width: 100% !important;
+  min-width: 100% !important;
+  float: none;
+  margin: 0 auto;
+}

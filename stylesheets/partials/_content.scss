@@ -1,0 +1,32 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the main content section.
+// -----------------------------------------------------------------------------
+
+/* Default content styling */
+
+/* Make the elements match the page colours */
+#content a:link,
+#content a:visited,
+#content .wFormRequired label:after,
+#content .wFormError,
+#content div.dl
+{ color: $main;} // Pick a colour that will show against most backgrounds
+
+#content a:hover,
+#content a:active
+{ color: $accent;}
+
+/*Button styling */
+// Button standard
+#content .wButton:not(.sButton) span,
+#content .webeditShareComponent button > span{
+  background: $main;
+  color: white;
+}
+
+// Button hover
+#content .wButton:not(.sButton):hover span,
+#content .webeditShareComponent:hover button > span{
+  background: $accent;
+  color: white;
+}
