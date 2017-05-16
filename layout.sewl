@@ -1,3 +1,9 @@
+// Responsive site built by [Develoeprs Name]
+// [Project Url]
+
+
+// 01_Site_Size---------------------------------------------------------------//
+
 breakpoints xs < 320 <= s < 480 <= m < 640 <= l < 800 <= (xl) <= 960
 
 breakpoints xs < 384 <= s < 576 <= m < 768 <= l < 960 <= (xl) <= 1152
@@ -10,8 +16,7 @@ breakpoints xs < 640 <= s < 960 <= (m) < 1280 <= l < 1600 <= xl <= 1920
 
 
 
-
-//LAYOUTS FOR LITE SITES
+// 02_Page_Types--------------------------------------------------------------//
 
 layout name home sublayouts "search shop content"
   +layout content content
@@ -29,7 +34,8 @@ layout name privacyPolicy description "Privacy policy page" sublayouts ""
   +layout content privacyPolicy
 
 
-// LAYOUT TEMPLATE
+
+// 03_Layout------------------------------------------------------------------//
 
 layout(content):
   section role header
@@ -47,7 +53,8 @@ layout(content):
     +itseezeFooter
 
 
-// CERI'S BASIC TEMPLATE
+
+// 04_Site_Sections-----------------------------------------------------------//
 
 header:
   row id headerRow
@@ -111,7 +118,53 @@ itseezeFooter:
       edit background light
 
 
-//Options
+
+//05_Search/Blog/Shop/PrivacyPolicy-------------------------------------------//
+
+search:
+  row id search padding "10 0"
+    search
+
+searchContent:
+  row class "wCentred contentSection"
+    searchresults
+
+shopContent:
+  row class "wCentred contentSection"
+    shop
+
+privacyPolicy:
+  row class "WhiteContent contentSection"
+    row class wCentred
+      privacypolicy name privacyPolicy
+
+blog:
+  +blogOrPost post no
+
+blogpost:
+  +blogOrPost post yes
+
+blogOrPost(post):
+  splitoptions name blogTopOptions space 20 gutter 20 padding 15
+    +allOptions
+  row class "contentSection WhiteContent"
+    row class wCentred
+      columns order 21 leading 180 breakpoint <l gutter 20 space 20
+        column
+          if {$post == "yes"}
+            blogpost
+          else
+            blog padding 10
+        column
+          split splits "1/1 <l:1,1" gutter 20 space 20
+            column
+              blogmenu type months
+            column
+              blogmenu type tags
+
+
+
+// 06_All_Site_Options--------------------------------------------------------//
 
 allOptions:
   +iconRows
@@ -119,6 +172,10 @@ allOptions:
   +socialIcons
   +extraSpace
   +growRollover
+
+
+
+// 07_Specific_Extras---------------------------------------------------------//
 
 growRollover:
   option name growRolloverOption description "Grow rollover (no overflow)" help "Image that grows on rollover" group Extras icon image class growRollover
@@ -204,48 +261,3 @@ social6:
         for index 1 6
           column
             image name {"socialIcon" . $index}
-
-
-
-//Miscellaneous bits
-
-search:
-  row id search padding "10 0"
-    search
-
-searchContent:
-  row class "wCentred contentSection"
-    searchresults
-
-shopContent:
-  row class "wCentred contentSection"
-    shop
-
-privacyPolicy:
-  row class "WhiteContent contentSection"
-    row class wCentred
-      privacypolicy name privacyPolicy
-
-blog:
-  +blogOrPost post no
-
-blogpost:
-  +blogOrPost post yes
-
-blogOrPost(post):
-  splitoptions name blogTopOptions space 20 gutter 20 padding 15
-    +allOptions
-  row class "contentSection WhiteContent"
-    row class wCentred
-      columns order 21 leading 180 breakpoint <l gutter 20 space 20
-        column
-          if {$post == "yes"}
-            blogpost
-          else
-            blog padding 10
-        column
-          split splits "1/1 <l:1,1" gutter 20 space 20
-            column
-              blogmenu type months
-            column
-              blogmenu type tags
