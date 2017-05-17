@@ -2,29 +2,32 @@
 // This file contains styles relating to the nav and dropdown menu.
 // -----------------------------------------------------------------------------
 
-// General styling for the whole bar -------------------------------------------
+// General styling for the whole nav -------------------------------------------
 nav {
+  background: $navBackground;
+
   .wDropdown {
+    //background: $navBackground;
 
     // Basic styling
     li a,
     li span {
-        transition: 0.2s;
-        line-height: 30px !important;
-        color: ;
-      }
-    }
+      color: $linkColor;
+      transition: 0.2s;  
+    } 
 
     // Basic styling for TOP LEVEL
     > li > a,
     > li > span {
-      line-height: 40px !important;
+      color: $navLinkColor;
+      line-height: $navLineHeight !important; 
     }
 
     // Basic styling CHILDREN (all levels below TOP)
     ul li > a,
     ul li > span {
-      line-height: 35px !important;
+      color: $navChildLinkColor;
+      line-height: ($navLineHeight / 2) !important; 
     }
   }
 }
@@ -41,7 +44,8 @@ nav {
 .wDropdown > li.wMenuOpen > span,
 .wDropdown > li.wMenuSelected:hover > span,
 .wDropdown > li.wMenuAncestor:hover > a {
-
+  background: $navBackground-hover;
+  color: $navLinkColor-hover;
 }
 
 // Child level hover state
@@ -50,31 +54,34 @@ nav {
 .wDropdown ul li:hover > span,
 .wDropdown ul li.wMenuOpen > a,
 .wDropdown ul li.wMenuOpen > span{
-
+  background: $navChildBackground-hover;
+  color: $navChildLinkColor-hover;
 }
 
 // Selected states -------------------------------------------------------------
 
 // Top level selected state
 .wDropdown > li.wMenuSelected > span {
-
+  background: $navBackground-hover;
+  color: $navLinkColor-hover;
 }
 
 // Child selected state
 .wDropdown ul li.wMenuSelected > span,
 .wDropdown ul li.wMenuSelected:hover > span {
-
+  background: $navChildBackground-hover;
+  color: $navChildLinkColor-hover;
 }
 
 // Misc extra menu styling bits ------------------------------------------------
 .wDropdown ul {
-  min-width: 100%;
-  text-align: left;
+  min-width: 100%; // sets ul to the same 
+  text-align: $navAlignment; // sets alignment of menu
 }
 
 // pad drop-down items
-.wDropdown a, span {
-    padding: 0 1em;
-    line-height : 3em;
-  }
-}
+.wDropdown a, 
+.wDropdown span {
+  padding: 0 1em;
+  line-height: 3em;
+} 

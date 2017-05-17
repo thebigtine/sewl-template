@@ -1,0 +1,291 @@
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0); }
+  20%, 80% {
+    transform: translate3d(2px, 0, 0); }
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0); }
+  40%, 60% {
+    transform: translate3d(4px, 0, 0); } }
+
+/* pad the top of the page in edit mode in order to avoid the toolbar */
+#webeditCoreEditModePage,
+.wEdit {
+  padding-top: 100px; }
+
+/* Remove default underline on links */
+a {
+  text-decoration: none; }
+
+/* Colour the it'seeze link */
+.webeditCopyrightComponent a {
+  color: #f37422 !important; }
+
+/* Make the dropdown a cross */
+#wMenuToggle:checked ~ * #wMenuIcon > span {
+  -webkit-transform: translate(0, 0.4375em) rotate(-180deg);
+  transform: translate(0, 0.4375em) rotate(-134deg); }
+  #wMenuToggle:checked ~ * #wMenuIcon > span::before {
+    width: 0.98em;
+    -webkit-transform: translate(-0.025em, -0.006em) rotate(-90deg);
+    transform: translate(-0.025em, -0.006em) rotate(-90deg); }
+  #wMenuToggle:checked ~ * #wMenuIcon > span::after {
+    opacity: 0; }
+
+/* Make textonimage text larger for full width rows */
+.wWidth1920 .wTextonimageText,
+.wWidth1920Xl .wTextonimageText,
+#banner .wTextonimageText {
+  font-size: 2em; }
+
+@media screen and (width: 1920px) {
+  .wEdit .wTextonimage {
+    font-size: inherit !important; } }
+
+/**
+ * Basic typography style for copy text
+ */
+body {
+  color: #222; }
+
+/**
+ * Clear inner floats
+ */
+.clearfix::after {
+  clear: both;
+  content: '';
+  display: table; }
+
+/**
+ * Main content area
+ * 1. Center it in the viewport
+ * 2. Leave some space on the edges, especially valuable on small screens
+ */
+#content {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 100%; }
+
+/**
+ * Hide text while making it readable for screen readers
+ * 1. Needed in WebKit-based browsers because of an implementation bug;
+ *    See: https://code.google.com/p/chromium/issues/detail?id=457146
+ */
+.hide-text {
+  overflow: hidden;
+  padding: 0;
+  /* 1 */
+  text-indent: 101%;
+  white-space: nowrap; }
+
+/**
+ * Hide element while making it readable for screen readers
+ * Shamelessly borrowed from HTML5Boilerplate:
+ * https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css#L119-L133
+ */
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px; }
+
+nav {
+  background: #222; }
+  nav .wDropdown li a,
+  nav .wDropdown li span {
+    color: #222;
+    transition: 0.2s; }
+  nav .wDropdown > li > a,
+  nav .wDropdown > li > span {
+    color: #ddd;
+    line-height: 4em !important; }
+  nav .wDropdown ul li > a,
+  nav .wDropdown ul li > span {
+    color: #222;
+    line-height: 2em !important; }
+
+.wDropdown > li:hover > a,
+.wDropdown > li:hover > span,
+.wDropdown > li.wMenuOpen > a,
+.wDropdown > li.wMenuOpen > span,
+.wDropdown > li.wMenuSelected:hover > span,
+.wDropdown > li.wMenuAncestor:hover > a {
+  background: #ddd;
+  color: #222; }
+
+.wDropdown ul li:hover > a,
+.wDropdown ul li:hover > span,
+.wDropdown ul li.wMenuOpen > a,
+.wDropdown ul li.wMenuOpen > span {
+  background: #222;
+  color: #ddd; }
+
+.wDropdown > li.wMenuSelected > span {
+  background: #ddd;
+  color: #222; }
+
+.wDropdown ul li.wMenuSelected > span,
+.wDropdown ul li.wMenuSelected:hover > span {
+  background: #222;
+  color: #ddd; }
+
+.wDropdown ul {
+  min-width: 100%;
+  text-align: left; }
+
+.wDropdown a,
+.wDropdown span {
+  padding: 0 1em;
+  line-height: 3em; }
+
+footer {
+  color: #ddd;
+  padding: 20px 30px; }
+
+/**
+ * Make the elements match the page colours
+ * 1. Pick a colour that will show against the background
+ */
+footer a:link,
+footer a:visited,
+footer .wFormRequired label:after,
+footer .wFormError,
+footer div.dl {
+  color: #00ADD7;
+  /* 1 */ }
+
+footer a:hover,
+footer a:active {
+  color: #E01706; }
+
+footer .wButton:not(.sButton) span,
+footer .webeditShareComponent button > span {
+  background: #ddd;
+  color: #222; }
+
+footer .wButton:not(.sButton):hover span,
+footer .webeditShareComponent:hover button > span {
+  background: #222;
+  color: #ddd; }
+
+#top .Animator {
+  position: relative; }
+
+#top .Animator > .wSplit {
+  position: relative;
+  z-index: 1;
+  overflow: hidden; }
+
+#top .Animator > .wSplit > div > * {
+  position: relative;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%; }
+
+#top .AnimatorScroller > .wSplit > div > * + * {
+  position: absolute;
+  left: 100%; }
+
+#top .AnimatorFader > .wSplit > div > * + * {
+  position: absolute;
+  opacity: 0;
+  filter: alpha(opacity=0); }
+
+#top .AnimatorButton {
+  cursor: pointer; }
+
+#top .AnimatorDots {
+  position: absolute;
+  z-index: 3; }
+
+#top .AnimatorDot {
+  position: relative;
+  cursor: pointer; }
+
+#top .AnimatorDot img + img {
+  position: absolute;
+  top: 0;
+  left: 0; }
+
+#top .AnimatorDotNest {
+  position: absolute;
+  top: 0; }
+
+.wEdit .animatorOption {
+  margin-bottom: 10px; }
+
+#backToTop {
+  background: #222 url("backToTopArrow.png") center no-repeat;
+  background-size: contain;
+  height: 28px; }
+
+/*Button styling */
+.wButton:not(.sButton) span,
+.webeditShareComponent button > span {
+  text-shadow: none;
+  transition: 0.5s;
+  padding: 5px 10px;
+  text-transform: uppercase;
+  border-radius: 0;
+  border: none; }
+
+.wColourblockLightText .wFormRequired label:after,
+.wColourblockLightText a,
+.wColourblockLightText .wFormError,
+.wColourblockLightText div.dl {
+  color: white !important; }
+
+.wColourblockDarkText .wFormRequired label:after,
+.wColourblockDarkText a,
+.wColourblockLightText .wFormError,
+.wColourblockDarkText div.dl {
+  color: black !important; }
+
+.contentIcon100 {
+  max-width: 100px;
+  float: none;
+  margin: 0 auto; }
+
+.contentIcon220 {
+  max-width: 220px;
+  float: none;
+  margin: 0 auto; }
+
+.wEdit .extraSpace {
+  border: 1px dashed #ccc; }
+
+.Image1Content {
+  background-image: url("imgbg1.jpg"); }
+
+@breakpoint >=l {
+  .imageContent {
+    background-attachment: fixed;
+    background-size: cover; } }
+
+@breakpoint <=m {
+  .imageContent {
+    background-attachment: scroll; } }
+
+/* This section *should* target landscape iPads and similar tablet devices */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+  .imageContent {
+    background-attachment: scroll;
+    background-size: 1024px !important; } }
+
+#top .magicArrow {
+  margin-top: -90px;
+  position: relative;
+  z-index: 2; }
+
+.wEdit .magicArrow {
+  background-color: #eee;
+  background-image: linear-gradient(45deg, #ccc 25%, transparent 25%, transparent 75%, #ccc 75%, #ccc), linear-gradient(45deg, #ccc 25%, transparent 25%, transparent 75%, #ccc 75%, #ccc);
+  background-size: 30px 30px;
+  background-position: 0 0, 15px 15px; }

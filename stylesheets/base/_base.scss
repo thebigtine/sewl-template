@@ -14,25 +14,25 @@ a {
 }
 
 /* Colour the it'seeze link */
-.webeditCopyrightComponent a{
+.webeditCopyrightComponent a {
   color : #f37422 !important;
 }
 
 /* Make the dropdown a cross */
-#wMenuToggle:checked ~ * #wMenuIcon > span::before {
-  width: 0.98em;
-  -webkit-transform: translate(-0.025em,-0.006em) rotate(-90deg);
-  transform: translate(-0.025em,-0.006em) rotate(-90deg);
-}
-
-#wMenuToggle:checked ~ * #wMenuIcon > span::after {
-  opacity: 0;
-}
-
 #wMenuToggle:checked ~ * #wMenuIcon > span {
   -webkit-transform: translate(0,0.4375em) rotate(-180deg);
   transform: translate(0,0.4375em) rotate(-134deg);
-}
+
+  &::before {
+    width: 0.98em;
+    -webkit-transform: translate(-0.025em,-0.006em) rotate(-90deg);
+    transform: translate(-0.025em,-0.006em) rotate(-90deg);
+  }
+
+  &::after {
+    opacity: 0;
+  }
+} 
 
 /* Make textonimage text larger for full width rows */
 .wWidth1920 .wTextonimageText,
@@ -45,23 +45,4 @@ a {
   .wEdit .wTextonimage {
     font-size: inherit !important;
   }
-}
-
-.wWidth1920,
-.wWidth1920Xl {
-  width: 100% !important;
-}
-
-
-/**
- * Basic styles for links
- */
-a {
-  color: $brand-color;
-  text-decoration: none;
-
-  @include on-event {
-    color: $text-color;
-    text-decoration: underline;
-  }
-}
+}  

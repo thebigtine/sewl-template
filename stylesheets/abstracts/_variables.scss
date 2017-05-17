@@ -1,71 +1,59 @@
 // -----------------------------------------------------------------------------
-// This file contains all application-wide Sass variables.
+// This file contains all site-wide Sass variables.
 // -----------------------------------------------------------------------------
 
+// Theme Colors ----------------------------------------------------------------
+$mainColor: #222;
+$darkGrey:  #111;
+$lightGrey: #ddd;
 
+// replace these with the sites palette
+$red: #E01706;
+$yellow: #F1C900;
+$blue: #00ADD7;
 
+// Link Colors -----------------------------------------------------------------
+$linkColor: $mainColor;
+$linkColor-hover: $blue;
 
+// Navigation Variables --------------------------------------------------------
+$navLinkColor: $lightGrey;
+$navLinkColor-hover: $mainColor;
 
-/// Regular font family
-/// @type List
-$text-font-stack: 'Open Sans', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default;
+$navBackground: $mainColor;
+$navBackground-hover: $lightGrey;
 
-/// Code (monospace) font family
-/// @type List
-$code-font-stack: 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Monaco', monospace !default;
+$navChildLinkColor: $mainColor;
+$navChildLinkColor-hover: $lightGrey;
 
+$navChildBackground: $lightGrey;
+$navChildBackground-hover: $mainColor;
 
+$navLineHeight: 4em;
+$navFontSize: 14px;
+$navAlignment: left;
 
+// Footer ----------------------------------------------------------------------
+$footerBackground: $mainColor;
+$footerColor: $lightGrey;
+$footerPadding: 20px 30px;
 
+$footerLinkColor: $blue;
+$footerLinkColor-hover: $red;
 
-/// Copy text color
-/// @type Color
-$text-color: rgb(34, 34, 34) !default;
+$footerBtnBackground: $lightGrey;
+$footerBtnBackground-hover: $mainColor;
+$footerBtnColor: $mainColor;
+$footerBtnColor-hover: $lightGrey;
 
-/// Main brand color
-/// @type Color
-$brand-color: rgb(229, 0, 80) !default;
-
-/// Light grey
-/// @type Color
-$light-grey: rgb(237, 237, 237) !default;
-
-/// Medium grey
-/// @type Color
-$mid-grey: rgb(153, 153, 153) !default;
-
-/// Dark grey
-/// @type Color
-$dark-grey: rgb(68, 68, 68) !default;
-
-
-
-
-
-/// Container's maximum width
-/// @type Length
-$max-width: 1180px !default;
-
-
-
-
-
-/// Breakpoints map
-/// @prop {String} keys - Keys are identifiers mapped to a given length
-/// @prop {Map} values - Values are actual breakpoints expressed in pixels
-$breakpoints: (
-  'small': 320px,
-  'medium': 768px,
-  'large': 1024px,
-) !default;
-
-
-
-
-
-
-/// Relative or absolute URL where all assets are served from
-/// @type String
-/// @example scss - When using a CDN
-///   $base-url: 'http://cdn.example.com/assets/';
-$base-url: '/assets/' !default;
+// z-index ---------------------------------------------------------------------
+$z-top:    10;
+$z-9:      9;
+$z-8:      8;
+$z-7:      7;
+$z-6:      6;
+$z-5:      5;
+$z-4:      4;
+$z-3:      3;
+$z-2:      2;
+$z-bottom: 1;

@@ -3,32 +3,39 @@
 // -----------------------------------------------------------------------------
 
 footer{
-  padding: 20px 30px;
+  color: $footerColor;
+  padding: $footerPadding;
 }
 
-/* Make the elements match the page colours */
+/**
+ * Make the elements match the page colours
+ * 1. Pick a colour that will show against the background
+ */
 footer a:link,
 footer a:visited,
 footer .wFormRequired label:after,
 footer .wFormError,
-footer div.dl
-{ color: #fff;} // Pick a colour that will show against the background
+footer div.dl { 
+	color: $footerLinkColor; /* 1 */
+} 
 
 footer a:hover,
-footer a:active
-{ color: #ccc;}
-
-/*Button styling */
-// Button standard
-footer .wButton:not(.sButton) span,
-footer .webeditShareComponent button > span{
-  background: #fff;
-  color: $main;
+footer a:active { 
+	color: $footerLinkColor-hover;
 }
 
-// Button hover
+// Button styling --------------------------------------------------------------
+
+// Normal state
+footer .wButton:not(.sButton) span,
+footer .webeditShareComponent button > span{
+  background: $footerBtnBackground;
+  color: $footerBtnColor;
+}
+
+// Hover state
 footer .wButton:not(.sButton):hover span,
 footer .webeditShareComponent:hover button > span{
-  background: white;
-  color: $accent;
+  background: $footerBtnBackground-hover;
+  color: $footerBtnColor-hover;
 }
